@@ -8,8 +8,7 @@ abbr > ~/.config/fish/conf.d/abbr.fish
 zoxide init --cmd cd fish | source
 
 set -x STARSHIP_CONFIG ~/.config/starship/starship.toml
-set -gx http_proxy "http://127.0.0.1:8899"
-set -gx https_proxy "http://127.0.0.1:8899"
+set -gx all_proxy http://127.0.0.1:8899
 
 function tweet
     source ~/Workspace/Projects/Tweet/onlyPush/venv/bin/activate.fish
