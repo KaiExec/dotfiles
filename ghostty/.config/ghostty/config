@@ -25,7 +25,8 @@
 # ==========================
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
-font-family = JetBrainsMono Nerd Font
+font-family = "JetBrainsMono Nerd Font"
+font-family = "LXGW WenKai Mono"
 font-size = 20
 cursor-style-blink = true
 background-opacity = 0.8

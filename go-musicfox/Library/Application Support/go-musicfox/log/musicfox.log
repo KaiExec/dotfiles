@@ -1,2 +1,0 @@
-time=2025-12-16T15:09:56.521+08:00 level=INFO source=/go/src/go-musicfox/internal/keybindings/keybindings.go:383 msg="解绑操作 'toggle (切换播放状态)'"
-time=2025-12-16T15:09:56.524+08:00 level=INFO source=/go/src/go-musicfox/internal/ui/event_handler.go:29 msg="事件处理器已初始化，加载了 98 个有效按键绑定映射。"

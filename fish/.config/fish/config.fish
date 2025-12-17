@@ -2,8 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# Abbreviation
-abbr > ~/.config/fish/conf.d/abbr.fish
+source ./conf.d/abbr.fish
 
 zoxide init --cmd cd fish | source
 
