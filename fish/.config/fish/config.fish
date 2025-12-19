@@ -1,27 +1,18 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    set -gx all_proxy http://127.0.0.1:8899
+    for file in $__fish_config_dir/custom/**/*.fish
+        source $file
+    end
+
+    set -x STARSHIP_CONFIG ~/.config/starship/starship.toml
+    starship init fish | source
+    zoxide init fish --cmd cd | source
 end
 
-source ./conf.d/abbr.fish
 
-zoxide init --cmd cd fish | source
-
-set -x STARSHIP_CONFIG ~/.config/starship/starship.toml
-set -gx all_proxy http://127.0.0.1:8899
-
-function tweet
-    source ~/Workspace/Projects/Tweet/onlyPush/venv/bin/activate.fish
-    python ~/Workspace/Projects/Tweet/onlyPush/onlyPush.py
-    deactivate
+function fish_greeting
+    echo "Today is $(set_color --bold yellow)$(date +"%y-%m/%d")"
+    echo "$(set_color --bold magenta)EXIST FOR YOU💜"
 end
 
-function ra
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
-
-starship init fish | source

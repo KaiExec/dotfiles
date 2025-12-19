@@ -7,7 +7,7 @@ config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = ['exec-and-forget sketchybar']
 
 # Start AeroSpace at login
 # TODO after all setting works good!
@@ -39,7 +39,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+    'sketchybar --trigger aerospace_workspace_change'
 ]
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
@@ -51,8 +51,23 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["Terminal","Browser","Game","Video","Chat","Reeder","E-books","Network","Inbox"]
-                        
+persistent-workspaces = ['',
+                         '',
+                         '',
+                         '',
+                         '',
+                         '',
+                         '',
+                         '',
+                         '']
+
+
+
+
+
+
+
+
                        
 
 # A callback that runs every time binding mode changes
@@ -78,7 +93,7 @@ on-mode-changed = []
     inner.vertical =   10
     outer.left =       0
     outer.bottom =     0
-    outer.top =        50
+    outer.top =        55
     outer.right =      0
 
 # 'main' binding mode declaration
@@ -140,16 +155,15 @@ on-mode-changed = []
     # alt-7 = 'workspace 7'
     # alt-8 = 'workspace 8'
     # alt-9 = 'workspace 9'
-    alt-t = 'workspace Terminal' # Terminal
-    alt-b = 'workspace Browser' # Browser
-    alt-g = 'workspace Game' # Game
-    alt-v = 'workspace Video' # Video
-    alt-a = 'workspace TODOList' # TODOList
-    alt-c = 'workspace Chat' # Chat
-    alt-r = 'workspace Reeder' # Reeder
-    alt-e = 'workspace E-books' # E-books
-    alt-n = 'workspace Network' # Network
-    alt-i = 'workspace Inbox' # Inbox
+    alt-t = 'workspace ' # Terminal
+    alt-b = 'workspace ' # Browser
+    alt-g = 'workspace ' # Game
+    alt-v = 'workspace ' # Video
+    alt-a = 'workspace ' # TODOList
+    alt-c = 'workspace ' # Chat
+    alt-r = 'workspace ' # Reeder
+    alt-e = 'workspace ' # E-books
+    alt-i = 'workspace ' # Inbox
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     # alt-shift-1 = ['move-node-to-workspace 1','workspace 1' ]
@@ -161,16 +175,15 @@ on-mode-changed = []
     # alt-shift-7 = ['move-node-to-workspace 7','workspace 7' ]
     # alt-shift-8 = ['move-node-to-workspace 8','workspace 8' ]
     # alt-shift-9 = ['move-node-to-workspace 9','workspace 9' ]
-    alt-shift-t = ['move-node-to-workspace Terminal','workspace Terminal' ]
-    alt-shift-b = ['move-node-to-workspace Browser','workspace Browser' ]
-    alt-shift-g = ['move-node-to-workspace Game','workspace Game' ]
-    alt-shift-v = ['move-node-to-workspace Video','workspace Video' ]
-    alt-shift-a = ['move-node-to-workspace TODOList','workspace TODOList' ]
-    alt-shift-c = ['move-node-to-workspace Chat','workspace Chat' ]
-    alt-shift-r = ['move-node-to-workspace Reeder','workspace Reeder' ]
-    alt-shift-e = ['move-node-to-workspace books','workspace E-books' ]
-    alt-shift-n = ['move-node-to-workspace Network','workspace Network' ]
-    alt-shift-i = ['move-node-to-workspace Inbox','workspace Inbox' ]
+    alt-shift-t = ['move-node-to-workspace ','workspace ' ]
+    alt-shift-b = ['move-node-to-workspace ','workspace ' ]
+    alt-shift-g = ['move-node-to-workspace ','workspace ' ]
+    alt-shift-v = ['move-node-to-workspace ','workspace ' ]
+    alt-shift-a = ['move-node-to-workspace ','workspace ' ]
+    alt-shift-c = ['move-node-to-workspace ','workspace ' ]
+    alt-shift-r = ['move-node-to-workspace ','workspace ' ]
+    alt-shift-e = ['move-node-to-workspace ','workspace ' ]
+    alt-shift-i = ['move-node-to-workspace ','workspace ' ]
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'

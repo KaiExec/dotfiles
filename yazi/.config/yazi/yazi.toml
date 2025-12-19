@@ -19,8 +19,8 @@ title_format   = "Yazi: {cwd}"
 [preview]
 wrap            = "no"
 tab_size        = 2
-max_width       = 600
-max_height      = 900
+max_width       = 1600
+max_height      = 2400
 cache_dir       = ""
 image_delay     = 30
 image_filter    = "triangle"
@@ -52,7 +52,7 @@ extract = [
 	{ run = 'ya pub extract --list %*',   desc = "Extract here", for = "windows" },
 ]
 play = [
-	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+	{ run = 'vlc -f "$@"', orphan = true, for = "unix" },
 	{ run = 'mpv --force-window %*', orphan = true, for = "windows" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]

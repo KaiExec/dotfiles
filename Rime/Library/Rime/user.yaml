@@ -1,0 +1,10 @@
+var:
+  last_build_time: 1766135377
+  option:
+    search_single_char: true
+  previously_selected_schema: rime_ice
+  schema_access_time:
+    double_pinyin_sogou: 1766123906
+    luna_pinyin_fluency: 1766121547
+    luna_pinyin_simp: 1766121604
+    rime_ice: 1766124054

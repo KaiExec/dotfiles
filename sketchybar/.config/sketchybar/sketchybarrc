@@ -12,7 +12,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=35 blur_radius=50 color=0xff825720 corner_radius=20 y_offset=5 margin=20
+sketchybar --bar position=top height=35 color=0xff825720 corner_radius=20 y_offset=10 margin=20 shadow=on
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -23,13 +23,11 @@ default=(
   padding_left=5
   padding_right=5
   icon.font="JetBrainsMono Nerd Font:Bold:17.0"
-  label.font="JetBrainsMono Nerd Font:Bold:14.0"
-  icon.color=0xFFFF66CC
-  label.color=0xFF63E0AE
-  icon.padding_left=4
-  icon.padding_right=4
-  label.padding_left=4
-  label.padding_right=4
+  label.font="JetBrainsMono Nerd Font:Italic:14.0"
+  icon.color=0xFF80E6FF
+  label.color=0xffFFD700
+  label.padding_left=10
+  label.padding_right=10
 )
 sketchybar --default "${default[@]}"
 
@@ -63,11 +61,14 @@ for sid in $(aerospace list-workspaces --all); do
     sketchybar --add item space.$sid left \
         --subscribe space.$sid aerospace_workspace_change \
         --set space.$sid \
-        background.color=0xAABFD152 \
+        label.color=0xFF63E0AE\
+        background.color=0xFF000000 \
         background.corner_radius=20 \
         background.height=35 \
         background.drawing=off \
         label="$sid" \
+        label.padding_left=10 \
+        label.padding_right=10 \
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
 done
@@ -76,9 +77,9 @@ done
 # only the properties deviating from the current defaults need to be set
 
 sketchybar --add item chevron left \
-           --set chevron icon= label.drawing=off \
+           --set chevron icon= icon.color=0xFF000000 label.drawing=off \
            --add item front_app left \
-           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+           --set front_app icon.drawing=off label.color=0xFFFF7DE6 script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
@@ -100,6 +101,20 @@ sketchybar --add item clock right \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
+
+sketchybar --add item memory right \
+           --set memory update_freq=5 \
+                        icon=󰍛 \
+                        script="$CONFIG_DIR/plugins/memory.sh" \
+
+sketchybar --add item music right \
+           --set music script="$CONFIG_DIR/plugins/music.sh" \
+                       label.font="Xingkai SC:Bold:18.0" \
+                       icon= \
+                       icon.padding_right=-5 \
+                       icon.color=0xFFFF7ADB \
+                       update_freq=5
+
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
