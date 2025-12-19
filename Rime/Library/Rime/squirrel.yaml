@@ -31,6 +31,10 @@ app_options:
   #   ascii_mode: true    # 开启默认英文
   # com.microsoft.VSCode:
   #   ascii_mode: false   # 关闭默认英文
+  com.mitchellh.ghostty:
+    ascii_mode: true
+  com.raycast.macos:
+    ascii_mode: true
 
 
 style:
@@ -41,7 +45,7 @@ style:
   # 以下是预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。
 
   # 候选框与文字的排列方式
-  candidate_list_layout: stacked  # stacked | linear       皮肤横竖排显示是调整这个
+  candidate_list_layout: linear  # stacked | linear       皮肤横竖排显示是调整这个
   text_orientation: horizontal    # horizontal | vertical  文字方向
   # 拼音或词句是否显示在键入位置
   inline_preedit: true     # true | false  键入码显示位置
@@ -93,7 +97,7 @@ preset_color_schemes:
     author: 雨過之後、佛振
     # 如果将字体设置为 PingFangSC-Regular
     # 会让 🈶🈚️🉑🈲🉐 这几个 Emoji 失去彩色效果，留空反而可以显示。。。
-    font_face: ""                   # 字体及大小
+    font_face: "LXGW WenKai Mono"                   # 字体及大小
     font_point: 18
     label_font_face: "Helvetica"    # 序号字体及大小
     label_font_point: 12
@@ -108,15 +112,15 @@ preset_color_schemes:
     border_height: 0                        # 外边框 高
     border_width: 0                         # 外边框 宽
     corner_radius: 10                       # 外边框 圆角半径
-    hilited_corner_radius: 0                # 选中框 圆角半径
+    hilited_corner_radius: 10                # 选中框 圆角半径
     surrounding_extra_expansion: 0          # 候选项背景相对大小？
-    shadow_size: 0                          # 阴影大小
+    shadow_size: 5                          # 阴影大小
     line_spacing: 5                         # 行间距
     base_offset: 0                          # 字基高
-    alpha: 1                                # 透明度，0~1
+    alpha: 0.9                                # 透明度，0~1
     spacing: 10                             # 拼音与候选项之间的距离 （inline_preedit: false）
     color_space: srgb                       # 色彩空间： srgb | display_p3
-    back_color: 0x545554                    # 底色
+    back_color: 0x205782                    # 底色
     hilited_candidate_back_color: 0xE3E3E3  # 选中底色
     label_color: 0xBBBBBB                   # 序号颜色
     hilited_candidate_label_color: 0x4C4C4C # 选中序号颜色

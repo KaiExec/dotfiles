@@ -1,6 +1,0 @@
-# default.custom.yaml
-
-patch:
-  "switcher/hotkeys":  # 這個列表裏每項定義一個快捷鍵，使哪個都中
-    - "Control+f"      # 添加 Ctrl+s
-  "menu/page_size": 9
