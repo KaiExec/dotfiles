@@ -1,0 +1,9 @@
+patch:
+  schema_list:
+    - schema: rime_ice
+  "menu/page_size": 10
+  "switcher/hotkeys":
+    - Control+Shift+U
+  "key_binder/bindings/+":
+    - { when: has_menu, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }

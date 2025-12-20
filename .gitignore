@@ -3,3 +3,9 @@ go-musicfox/Library/Application Support/go-musicfox/*
 Rime/Library/Rime/build
 Rime/Library/Rime/rime_ice.userdb
 tmux/.config/tmux/plugins
+Rime/Library/Rime/en_dicts
+Rime/Library/Rime/default.yaml
+Rime/Library/Rime/radical_pinyin.dict.yaml
+Rime/Library/Rime/radical_pinyin.schema.yaml
+Rime/Library/Rime/squirrel.yaml
+Rime/Library/Rime/user.yaml

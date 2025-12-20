@@ -23,10 +23,4 @@
 #
 # 此行之后不能写注释
 
-『』	call
-
-https://www.netflix.com	nf
-https://www.kaing.top	Mblog
-
-hy104556222@gmail.com	hgml 
-kaiexecutor@gmail.com	kgml 
+「」	call

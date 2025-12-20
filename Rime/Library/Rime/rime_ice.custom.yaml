@@ -1,0 +1,16 @@
+patch:
+  "speller/alphabet": zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA@`
+  "speller/initials": zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA@
+  "schema/dependencies/+":
+    - custom
+  "engine/translators/@6": "table_translator@custom"
+
+  custom:
+    dictionary: custom
+    enable_completion: true
+    enable_sentence: false
+    enable_user_dict: false
+    initial_quality: 1000
+    db_class: tabledb
+
+  "custom_phrase/user_dict": custom

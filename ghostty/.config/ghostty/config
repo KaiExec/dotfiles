@@ -29,7 +29,7 @@ font-family = "JetBrainsMono Nerd Font"
 font-family = "LXGW WenKai Mono"
 font-size = 20
 cursor-style-blink = true
-background-opacity = 0.8
+background-opacity = 0.7
 background-blur-radius = 40
 # window-padding-x = 2
 #
@@ -43,7 +43,7 @@ background-blur-radius = 40
 # # Any line beginning with a # is a comment. It's not possible to put
 # # a comment after a config option, since it would be interpreted as a
 # # part of the value. For example, this will have a value of "#123abc":
-# background = #123abc
+background = #321B07
 #
 # # Empty values are used to reset config keys to default.
 # key =

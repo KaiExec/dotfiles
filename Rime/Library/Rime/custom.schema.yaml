@@ -1,0 +1,8 @@
+# 用于触发词典编译的伪方案
+schema:
+  schema_id: custom
+  name: "触发编译"
+  version: "1.0"
+
+translator:
+  dictionary: custom

@@ -1,0 +1,12 @@
+patch:
+  app_options:
+    com.mitchellh.ghostty:
+      ascii_mode: true
+    com.raycast.macos:
+      ascii_mode: true
+  "style/candidate_list_layout": linear
+  "preset_color_schemes/purity_of_form_custom/font_point": 18
+  "preset_color_schemes/purity_of_form_custom/corner_radius": 10
+  "preset_color_schemes/purity_of_form_custom/hilited_corner_radius": 10
+  "preset_color_schemes/purity_of_form_custom/alpha": 0.9
+  "preset_color_schemes/purity_of_form_custom/back_color": 0x205782
