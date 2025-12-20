@@ -1,9 +1,9 @@
 patch:
   app_options:
-    com.mitchellh.ghostty:
-      ascii_mode: true
-    com.raycast.macos:
-      ascii_mode: true
+    com.tencent.xinWeChat:
+      ascii_mode: false
+    ru.keepcoder.Telegram:
+      ascii_mode: false
   "style/candidate_list_layout": linear
   "preset_color_schemes/purity_of_form_custom/font_point": 18
   "preset_color_schemes/purity_of_form_custom/corner_radius": 10
