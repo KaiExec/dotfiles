@@ -1,5 +1,5 @@
 go-musicfox/Library/Application Support/go-musicfox/*
-!go-musicfox/Library/Application Support/go-musicfox/go-musicfox.ini
+!go-musicfox/Library/Application Support/go-musicfox/config.toml
 Rime/Library/Rime/build
 Rime/Library/Rime/rime_ice.userdb
 tmux/.config/tmux/plugins

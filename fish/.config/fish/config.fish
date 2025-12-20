@@ -10,9 +10,7 @@ if status is-interactive
     zoxide init fish --cmd cd | source
 end
 
-
 function fish_greeting
     echo "Today is $(set_color --bold yellow)$(date +"%y-%m/%d")"
     echo "$(set_color --bold magenta)EXIST FOR YOU💜"
 end
-
