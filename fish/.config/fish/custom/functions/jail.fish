@@ -34,6 +34,7 @@ function jail -a aim cell
     mkdir -p "$location"
     # Move
     mv "$aim" "$location"
+    stow $location
 
     # Conguraulation?
     echo -e "The Cell: $location/$(basename $aim)\nIt's alone now💀"

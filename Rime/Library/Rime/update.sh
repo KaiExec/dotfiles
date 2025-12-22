@@ -1,3 +1,8 @@
+#!/bin/bash
+if ! (command -v plum); then
+    echo "Chekc if you have install 'plum', and put it in \$PATH"
+    exit 1
+fi
 bash ~/workspace/Projects/plum/rime-install iDvel/rime-ice:others/recipes/full
 rm ~/dotfiles/Rime/Library/Rime/double*.yaml
 rm ~/dotfiles/Rime/Library/Rime/weasel.yaml

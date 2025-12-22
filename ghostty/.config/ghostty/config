@@ -29,8 +29,6 @@ font-family = "JetBrainsMono Nerd Font"
 font-family = "LXGW WenKai Mono"
 font-size = 20
 cursor-style-blink = true
-background-opacity = 0.7
-background-blur-radius = 40
 # window-padding-x = 2
 #
 # # Spacing around the equals sign does not matter.
@@ -43,7 +41,6 @@ background-blur-radius = 40
 # # Any line beginning with a # is a comment. It's not possible to put
 # # a comment after a config option, since it would be interpreted as a
 # # part of the value. For example, this will have a value of "#123abc":
-background = #321B07
 #
 # # Empty values are used to reset config keys to default.
 # key =
@@ -56,9 +53,9 @@ background = #321B07
 # theme = "light:Rose Pine Dawn,dark:Rose Pine"
 # theme = dark:Gruvbox Light,light:Gruvbox Dark
 # theme = light:Gruvbox Light,dark:Gruvbox Dark
-theme = Everforest Dark Hard
+# theme = Everforest Dark Hard
 # theme = Grass
-# theme = Catppuccin Mocha
+theme = Darkermatrix
 custom-shader = shaders/cursor_warp.glsl
 # For Mac Option key
 macos-option-as-alt = right

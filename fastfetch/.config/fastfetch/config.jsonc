@@ -1,88 +1,251 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "~/.config/fastfetch/logo.txt",
-    "color": {
-      "1": "magenta",
-      "2": "blue",
-      "3": "cyan",
-      "4": "green",
-      "5": "black",
-      "6": "white",
-      "7": "red",
-      "9": "reset_"
-    },
+      "source": "Xenia_old",
     "padding": {
-      "right": 2
+      "top": 5,
+      "left": 2,
+      "right": 3
     }
   },
   "display": {
+    "separator": " ",
+    "color": {
+      "keys": "cyan",
+      "title": "light_magenta"
+    },
+    "brightColor": true,
+    "key": {
+      "width": 18
+    },
     "bar": {
-      "elapsed": "/",
-      "char.total": "/",
-      "width": 20
+      "width": 14,
+      "char": {
+        "elapsed": "█",
+        "total": "░"
+      }
     },
     "percent": {
-      "type": 3,
-      "color": {
-        "green": "red",
-        "yellow": "red"
-      },
-      "ndigits": 2
-    },
-    "key": {
-      "width": 15
-    },
-    "color": "blink_",
-    "separator": " ~> "
+      "type": 3
+    }
   },
   "modules": [
-    "break",
-    "break",
-    "break",
-    "break",
+    // --- HEADER ---
+    {
+      "type": "custom",
+      "format": "╭──────────────────────────────",
+      "outputColor": "cyan"
+    },
     {
       "type": "title",
-      "format": "{6}{7}{#yellow}{8}{#}"
+      "key": "│ 󰟷 User",
+      "keyColor": "light_magenta",
+      "format": "{user-name}"
     },
-    "separator",
+    {
+      "type": "title",
+      "key": "│ 󰌢 Host",
+      "keyColor": "light_magenta",
+      "format": "{host-name}"
+    },
+    {
+      "type": "datetime",
+      "key": "│ 󰃰 Time",
+      "keyColor": "light_magenta"
+    },
+
+    // --- SOFTWARE ---
+    {
+      "type": "custom",
+      "format": "├──────────────────────────────",
+      "outputColor": "cyan"
+    },
     {
       "type": "os",
-      "format": "{#blue}{4}{#} {?6}({#yellow}{6}{#}){?} {?12}{12}{?}"
+      "key": "│ 󰏤 OS"
     },
     {
-      "type": "localip",
-      "showIpv6": true,
-      "showMac": true,
-      "compact": true
+      "type": "kernel",
+      "key": "│ 󰌽 Kernel"
     },
-    "shell",
-    "break",
-    "uptime",
+    {
+      "type": "uptime",
+      "key": "│ 󰥔 Uptime"
+    },
+    {
+      "type": "packages",
+      "key": "│ 󰏖 Packages",
+      "format": "{all} (pacman: {pacman}, flatpak: {flatpak-all})"
+    },
+    {
+      "type": "command",
+      "key": "│ 󰣇 AUR",
+      "keyColor": "cyan",
+      "text": "pacman -Qm | wc -l"
+    },
+    {
+      "type": "shell",
+      "key": "│ 󰟤 Shell"
+    },
+    {
+      "type": "locale",
+      "key": "│ 󰗊 Locale"
+    },
+    {
+      "type": "de",
+      "key": "│ 󰍹 Desktop"
+    },
+    {
+      "type": "wm",
+      "key": "│ 󰖩 WM"
+    },
+    {
+      "type": "terminal",
+      "key": "│  Terminal"
+    },
+    {
+      "type": "terminalfont",
+      "key": "│ 󰛖 Term Font"
+    },
+
+    // --- HARDWARE ---
+    {
+      "type": "custom",
+      "format": "├──────────────────────────────",
+      "outputColor": "green"
+    },
     {
       "type": "cpu",
-      "showPeCoreCount": true,
-      "temp": true
+      "key": "│ 󰻠 CPU",
+      "keyColor": "green",
+      "format": "{name} ({cores-physical}C/{cores-logical}T) @ {freq-max}"
     },
-    "gpu",
+    // GPU BYPASS (Nvidia)
+    {
+      "type": "command",
+      "key": "│ 󰢮 GPU",
+      "keyColor": "green",
+      "text": "nvidia-smi --query-gpu=name,memory.total,temperature.gpu --format=csv,noheader 2>/dev/null | awk -F', ' '{print $1 \" [\" $2 \"] @ \" $3 \"°C\"}'"
+    },
     {
       "type": "memory",
-      "key": "RAM"
+      "key": "│ 󰍛 RAM",
+      "keyColor": "green",
+      "format": "{used} / {total} ({percentage})"
     },
-    "break",
     {
-      "type": "disk"
+      "type": "swap",
+      "key": "│ 󰓡 Swap",
+      "keyColor": "green",
+      "format": "{used} / {total} ({percentage})"
     },
-    "break",
+
+    // --- STORAGE ---
     {
-      "type": "media",
-      "format": "{5}: <{#underline_yellow}{1}{#}> {?3}by {#1}{3}{#}{?}"
+      "type": "disk",
+      "key": "│ 󰋊 System",
+      "keyColor": "green",
+      "folders": "/",
+      "format": "{size-used} / {size-total} ({size-percentage}) [{filesystem}] {size-percentage-bar}"
+    },
+    {
+      "type": "disk",
+      "key": "│ 󰋊 Games",
+      "keyColor": "green",
+      "folders": "/mnt/games",
+      "format": "{size-used} / {size-total} ({size-percentage}) [{filesystem}] {size-percentage-bar}"
+    },
+    {
+      "type": "disk",
+      "key": "│ 󰋊 Backup",
+      "keyColor": "green",
+      "folders": "/mnt/backup",
+      "format": "{size-used} / {size-total} ({size-percentage}) [{filesystem}] {size-percentage-bar}"
+    },
+
+    // --- MISC ---
+    {
+      "type": "custom",
+      "format": "├──────────────────────────────",
+      "outputColor": "blue"
+    },
+    {
+      "type": "display",
+      "key": "│ 󰍹 Display",
+      "keyColor": "blue",
+      "format": "{width}x{height} @ {refresh-rate}Hz ({physical-width}mm x {physical-height}mm)"
     },
     {
       "type": "sound",
-      "format": "{2:12} {5} {3}"
+      "key": "│ 󰓃 Audio",
+      "keyColor": "blue"
     },
-    "break",
-    "colors"
+    {
+      "type": "theme",
+      "key": "│ 󰉼 Theme",
+      "keyColor": "blue"
+    },
+    {
+      "type": "icons",
+      "key": "│ 󰀻 Icons",
+      "keyColor": "blue"
+    },
+    {
+      "type": "font",
+      "key": "│ 󰛖 Sys Fonts",
+      "keyColor": "blue"
+    },
+    {
+      "type": "cursor",
+      "key": "│ 󰇀 Cursor",
+      "keyColor": "blue"
+    },
+    {
+      "type": "gamepad",
+      "key": "│ 󰊗 Gamepad",
+      "keyColor": "blue"
+    },
+    {
+      "type": "localip",
+      "key": "│ 󰩟 Local IP",
+      "keyColor": "blue",
+      "compact": true,
+      "showIpv4": true,
+      "showIpv6": false,
+      "defaultRouteOnly": true
+    },
+    {
+      "type": "battery",
+      "key": "│ 󰂄 Battery",
+      "keyColor": "blue"
+    },
+    {
+      "type": "player",
+      "key": "│ 󰎈 Player",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "media",
+      "key": "│ 󰝚 Playing",
+      "keyColor": "yellow"
+    },
+
+    // --- FOOTER ---
+    {
+      "type": "custom",
+      "format": "├──────────────────────────────",
+      "outputColor": "magenta"
+    },
+    {
+      "type": "colors",
+      "key": "│ 󰸱 Palette",
+      "keyColor": "magenta",
+      "symbol": "circle"
+    },
+    {
+      "type": "custom",
+      "format": "╰──────────────────────────────",
+      "outputColor": "cyan"
+    }
   ]
 }

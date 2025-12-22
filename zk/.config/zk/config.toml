@@ -13,7 +13,7 @@ language = "en"
 default-title = "Untitled"
 
 # Template used to generate a note's filename, without extension.
-filename = "{{slug title}}__{{id}}"
+filename = "{{id}}"
 
 # The file extension used for the notes.
 extension = "md"
@@ -28,7 +28,7 @@ template = "default.md"
 id-charset = "alphanum"
 
 # Length of the generated IDs.
-id-length = 6
+id-length = 5
 
 # Letter case for the random IDs.
 id-case = "lower"
@@ -87,6 +87,11 @@ recent = "zk edit --sort created- --created-after 'last two weeks' --interactive
 
 # Show a random note.
 lucky = "zk list --quiet --format full --sort random --limit 1"
+
+
+ls = "zk list $@"
+ed = "zk edit $@"
+n = "zk new $@"
 
 # LSP (EDITOR INTEGRATION)
 [lsp]
