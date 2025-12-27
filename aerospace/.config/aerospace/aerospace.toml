@@ -62,13 +62,6 @@ persistent-workspaces = ['',
                          '',
                          '']
 
-
-
-
-
-
-
-
                        
 
 # A callback that runs every time binding mode changes
@@ -90,8 +83,8 @@ on-mode-changed = []
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 10
-    inner.vertical =   10
+    inner.horizontal = 0
+    inner.vertical =   0
     outer.left =       0
     outer.bottom =     0
     outer.top =        55
@@ -135,6 +128,7 @@ on-mode-changed = []
     alt-j = 'focus down'
     alt-k = 'focus up'
     alt-l = 'focus right'
+    alt-shift-f = 'fullscreen'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     alt-shift-h = 'move left'
@@ -211,3 +205,11 @@ on-mode-changed = []
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.finder'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.iBooksX'
+    run = ['layout floating']

@@ -1,5 +1,5 @@
 {
-  "title": "Make Ctrl and Ctrl+ Better",
+  "title": "ctrl for GUI",
   "rules": [
     {
       "description": "Post escape if left_control is tapped",

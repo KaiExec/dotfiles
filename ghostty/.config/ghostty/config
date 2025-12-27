@@ -55,7 +55,7 @@ cursor-style-blink = true
 # theme = light:Gruvbox Light,dark:Gruvbox Dark
 # theme = Everforest Dark Hard
 # theme = Grass
-theme = Darkermatrix
+theme = Ultra Dark
 custom-shader = shaders/cursor_warp.glsl
 # For Mac Option key
 macos-option-as-alt = right
@@ -63,3 +63,5 @@ keybind = opt+left=text:\x1b[1;3D
 keybind = opt+right=text:\x1b[1;3C
 keybind = opt+up=text:\x1b[1;3A
 keybind = opt+down=text:\x1b[1;3B
+# window-decoration = "none"
+macos-titlebar-style = hidden
