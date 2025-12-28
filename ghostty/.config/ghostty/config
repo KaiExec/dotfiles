@@ -25,8 +25,9 @@
 # ==========================
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
-font-family = "JetBrainsMono Nerd Font"
-font-family = "LXGW WenKai Mono"
+# font-family = "Lilex Nerd Font"
+font-family = "LXGW WenKai Mono TC"
+font-style = "Light"
 font-size = 20
 cursor-style-blink = true
 # window-padding-x = 2
@@ -63,5 +64,9 @@ keybind = opt+left=text:\x1b[1;3D
 keybind = opt+right=text:\x1b[1;3C
 keybind = opt+up=text:\x1b[1;3A
 keybind = opt+down=text:\x1b[1;3B
+
+# Move forward and backward by word
+keybind = cmd+a=text:\x1bb
+keybind = cmd+f=text:\x1bf
 # window-decoration = "none"
 macos-titlebar-style = hidden
