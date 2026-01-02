@@ -26,8 +26,9 @@
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
 # font-family = "Lilex Nerd Font"
+font-family = "Lotion"
 font-family = "LXGW WenKai Mono TC"
-font-style = "Light"
+# font-style = "Light"
 font-size = 20
 cursor-style-blink = true
 # window-padding-x = 2
@@ -57,7 +58,7 @@ cursor-style-blink = true
 # theme = Everforest Dark Hard
 # theme = Grass
 theme = Ultra Dark
-custom-shader = shaders/cursor_warp.glsl
+
 # For Mac Option key
 macos-option-as-alt = right
 keybind = opt+left=text:\x1b[1;3D

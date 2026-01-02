@@ -234,6 +234,26 @@
       ]
     },
     {
+      "description": "Ctrl_z -> Cmd_z",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "z",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "z",
+              "modifiers": ["command"]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Ctrl_backspace -> Cmd_backspace",
       "manipulators": [
         {

@@ -4,24 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Ctrl_z -> Cmd_z",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "z",
-                                    "modifiers": { "mandatory": ["control"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Ctrl_t -> Cmd_t --- Except Ghostty",
                         "manipulators": [
                             {

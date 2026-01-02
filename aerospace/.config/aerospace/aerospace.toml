@@ -59,7 +59,8 @@ persistent-workspaces = ['💌',
                          '🪝',
                          '📓',
                          '🗑️',
-                         '📀']
+                         '📀',
+                         '✍️']
 
                        
 
@@ -158,6 +159,7 @@ on-mode-changed = []
     alt-e = 'workspace 📓' # E-books
     alt-i = 'workspace 🗑️' # Inbox
     alt-m = 'workspace 📀' # VM
+    alt-n = 'workspace ✍️' # Note
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     # alt-shift-1 = ['move-node-to-workspace 1','workspace 1' ]
@@ -178,6 +180,7 @@ on-mode-changed = []
     alt-shift-e = ['move-node-to-workspace 📓','workspace 📓' ]
     alt-shift-i = ['move-node-to-workspace 🗑️','workspace 🗑️' ]
     alt-shift-m = ['move-node-to-workspace 📀','workspace 📀' ]
+    alt-shift-n = ['move-node-to-workspace ✍️','workspace ✍️' ]
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
