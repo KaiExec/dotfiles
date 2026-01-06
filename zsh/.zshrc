@@ -54,9 +54,8 @@ alias v="nvim"
 #------------------------
 source <(fzf --zsh)
 
-# plug "zsh-users/zsh-syntax-highlighting"
-source ~/dotfiles/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source ~/dotfiles/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/dotfiles/zsh/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/dotfiles/zsh/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 eval "$(zoxide init zsh --cmd j)"
 #------------------------
 
