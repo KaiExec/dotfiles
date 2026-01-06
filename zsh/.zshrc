@@ -1,4 +1,4 @@
-[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+# [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 
 # Initial for start
 #------------------------
@@ -20,7 +20,7 @@ precmd() {
     vcs_info
 }
 
-PROMPT='%B%F{cyan}%~%f${vcs_info_msg_0_} %F{green}󱈘%f%b '
+PROMPT='%B%F{cyan}%~%f${vcs_info_msg_0_} %F{green}🧠%f%b '
 #------------------------
 
 # Function&Widget
@@ -54,8 +54,12 @@ alias v="nvim"
 #------------------------
 source <(fzf --zsh)
 
-plug "zsh-users/zsh-syntax-highlighting"
-plug "marlonrichert/zsh-autocomplete"
+# plug "zsh-users/zsh-syntax-highlighting"
+source ~/dotfiles/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/dotfiles/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 eval "$(zoxide init zsh --cmd j)"
 #------------------------
 
+
+# Created by `pipx` on 2025-12-29 01:37:43
+export PATH="$PATH:/Users/eleph/.local/bin"

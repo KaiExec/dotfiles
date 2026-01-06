@@ -1,63 +1,27 @@
-# This is the configuration file for Ghostty.
-#
-# This template file has been automatically created at the following
-# path since Ghostty couldn't find any existing config files on your system:
-#
-#   /Users/eleph/Library/Application Support/com.mitchellh.ghostty/config
-#
-# The template does not set any default options, since Ghostty ships
-# with sensible defaults for all options. Users should only need to set
-# options that they want to change from the default.
-#
-# Run `ghostty +show-config --default --docs` to view a list of
-# all available config options and their default values.
-#
-# Additionally, each config option is also explained in detail
-# on Ghostty's website, at https://ghostty.org/docs/config.
-#
-# Ghostty can reload the configuration while running by using the menu
-# options or the bound key (default: Command + Shift + comma on macOS and
-# Control + Shift + comma on other platforms). Not all config options can be
-# reloaded while running; some only apply to new windows and others may require
-# a full restart to take effect.
-
-# Config syntax crash course
-# ==========================
-# # The config file consists of simple key-value pairs,
-# # separated by equals signs.
-# font-family = "Lilex Nerd Font"
-font-family = "Lotion"
+# Font
+font-family = "Maple Mono"
 font-family = "LXGW WenKai Mono TC"
-# font-style = "Light"
 font-size = 20
-cursor-style-blink = true
-# window-padding-x = 2
-#
-# # Spacing around the equals sign does not matter.
-# # All of these are identical:
-# key=value
-# key= value
-# key =value
-# key = value
-#
-# # Any line beginning with a # is a comment. It's not possible to put
-# # a comment after a config option, since it would be interpreted as a
-# # part of the value. For example, this will have a value of "#123abc":
-#
-# # Empty values are used to reset config keys to default.
-# key =
-#
-# # Some config options have unique syntaxes for their value,
-# # which is explained in the docs for that config option.
-# # Just for example:
-# resize-overlay-duration = 4s 200ms
-# theme = Coffee theme
-# theme = "light:Rose Pine Dawn,dark:Rose Pine"
-# theme = dark:Gruvbox Light,light:Gruvbox Dark
-# theme = light:Gruvbox Light,dark:Gruvbox Dark
-# theme = Everforest Dark Hard
-# theme = Grass
-theme = Ultra Dark
+
+# ColorScheme
+background = #333333
+foreground = #C2C2C2
+palette = 0=#333333
+palette = 1=#CCCCCC
+palette = 2=#686868
+palette = 3=#7C7C7C
+palette = 4=#868686
+palette = 5=#5E5E5E
+palette = 6=#B8B8B8
+palette = 7=#A4A4A4
+palette = 8=#A4A4A4
+palette = 9=#CCCCCC
+palette = 10=#686868
+palette = 11=#7C7C7C
+palette = 12=#868686
+palette = 13=#5E5E5E
+palette = 14=#B8B8B8
+palette = 15=#868686
 
 # For Mac Option key
 macos-option-as-alt = right
@@ -69,5 +33,4 @@ keybind = opt+down=text:\x1b[1;3B
 # Move forward and backward by word
 keybind = cmd+a=text:\x1bb
 keybind = cmd+f=text:\x1bf
-# window-decoration = "none"
 macos-titlebar-style = hidden

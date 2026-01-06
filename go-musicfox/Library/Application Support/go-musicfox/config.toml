@@ -76,7 +76,7 @@ centerEverything = false
 # 主题颜色
 # 随机
 # primaryColor = "random"
-primaryColor = "#7F551F" # 经典网易云音乐红
+primaryColor = "#FF8041" # 经典网易云音乐红
 
 # 进度条字符样式配置
 [theme.progress]

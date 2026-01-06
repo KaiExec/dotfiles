@@ -1,9 +1,28 @@
 return {
-	"bluz71/vim-moonfly-colors",
-	main = "moonfly",
-	lazy = false,
-	priority = 1000,
-	config = function()
-		vim.cmd([[colorscheme moonfly]])
-	end,
+	{
+		"e-ink-colorscheme/e-ink.nvim",
+		priority = 1000,
+		config = function()
+			require("e-ink").setup()
+			vim.cmd.colorscheme("e-ink")
+
+			-- choose light mode or dark mode
+			-- vim.opt.background = "dark"
+			-- vim.opt.background = "light"
+			--
+			-- or do
+			-- :set background=dark
+			-- :set background=light
+		end,
+	},
+	{
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("dashboard").setup({
+				-- config
+			})
+		end,
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
 }
