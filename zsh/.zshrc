@@ -1,5 +1,3 @@
-# [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
-
 # Initial for start
 #------------------------
 #------------------------
@@ -20,7 +18,7 @@ precmd() {
     vcs_info
 }
 
-PROMPT='%B%F{cyan}%~%f${vcs_info_msg_0_} %F{green}🧠%f%b '
+PROMPT='%B%F{cyan}%~%f${vcs_info_msg_0_} %F{green}%f%b '
 #------------------------
 
 # Function&Widget

@@ -1,5 +1,4 @@
 #!/bin/bash
-~/W/Hole/plum/rime-install iDvel/rime-ice:others/recipes/full
 rm ~/dotfiles/Rime/Library/Rime/double*.yaml
 rm ~/dotfiles/Rime/Library/Rime/weasel.yaml
 rm ~/dotfiles/Rime/Library/Rime/t9.schema.yaml
