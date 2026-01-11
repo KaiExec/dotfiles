@@ -1,5 +1,9 @@
 # Initial for start
 #------------------------
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+#-----------
+export EDITOR="nvim"
 #------------------------
 
 # Prompt
@@ -57,6 +61,5 @@ source ~/dotfiles/zsh/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plug
 eval "$(zoxide init zsh --cmd j)"
 #------------------------
 
-
-# Created by `pipx` on 2025-12-29 01:37:43
+# Created by `pipx` on 2026-01-07 11:00:21
 export PATH="$PATH:/Users/eleph/.local/bin"

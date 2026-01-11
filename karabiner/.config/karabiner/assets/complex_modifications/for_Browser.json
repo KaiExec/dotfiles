@@ -1,0 +1,31 @@
+{
+  "title": "for Browser",
+  "rules": [
+    {
+      "description": "Ctrl_q -> Cmd_l for quickly goto link bar",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "q",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "l",
+              "modifiers": ["command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.Safari$"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

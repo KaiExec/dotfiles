@@ -36,7 +36,7 @@ edit = [
 ]
 play = [
 	{ run = "xdg-open %s1",                desc = "Play", for = "linux" },
-	{ run = "open %s",                     desc = "Play", for = "macos" },
+	{ run = "vlc %s",                     desc = "Play", for = "macos" },
 	{ run = 'start "" %s1', orphan = true, desc = "Play", for = "windows" },
 	{ run = "termux-open %s1",             desc = "Play", for = "android" },
 	{ run = "mediainfo %s1; echo 'Press enter to exit'; read _", block = true, desc = "Show media info", for = "unix" },

@@ -1,8 +1,33 @@
 return {
 	{
-		"mason-org/mason.nvim",
-		-- event = "CmdlineEnter",
-		opts = {},
+		"williamboman/mason.nvim",
+		config = function()
+			-- Starting...
+			require("mason").setup()
+
+			-- Ensure Installed
+			local ensure_installed = {
+				"lua-language-server",
+				"pyright",
+				-- Formatter
+				"isort",
+				"prettier",
+				"stylua",
+			}
+
+			local registry = require("mason-registry")
+
+			registry.refresh(function()
+				for _, tool_name in ipairs(ensure_installed) do
+					local p = registry.get_package(tool_name)
+
+					if not p:is_installed() then
+						p:install()
+						vim.notify("Mason: Installing " .. tool_name, vim.log.levels.INFO)
+					end
+				end
+			end)
+		end,
 	},
 	{
 		"saghen/blink.cmp",

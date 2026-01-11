@@ -352,10 +352,6 @@
                 {
                     "from": { "key_code": "f1" },
                     "to": [{ "key_code": "f1" }]
-                },
-                {
-                    "from": { "key_code": "f12" },
-                    "to": [{ "key_code": "f12" }]
                 }
             ],
             "name": "Default profile",
