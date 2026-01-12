@@ -22,7 +22,7 @@ precmd() {
     vcs_info
 }
 
-PROMPT='%B%F{cyan}%~%f${vcs_info_msg_0_} %F{green}%f%b '
+PROMPT='%B%F{cyan}%~%f${vcs_info_msg_0_} %F{#FF0000}%f%b '
 #------------------------
 
 # Function&Widget
