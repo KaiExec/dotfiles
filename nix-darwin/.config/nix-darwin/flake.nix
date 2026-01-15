@@ -8,39 +8,50 @@
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
-  let
-    configuration = { pkgs, ... }: {
-      nix.enable = false;
-system.primaryUser = "eleph";
-users.users."eleph" = {
-    name = "eleph";
-    home = "/Users/eleph";
-};
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
+    let
+      configuration = { pkgs, ... }: {
+        nix.enable = false;
+        system.primaryUser = "eleph";
+        users.users."eleph" = {
+          name = "eleph";
+          home = "/Users/eleph";
+        };
+        launchd.daemons."nix-gc" = {
+          script = ''
+            ${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 7d
+          '';
+          serviceConfig = {
+            StartCalendarInterval = [{ Weekday = 7; Hour = 3; Minute = 0; }];
+            StandardOutPath = "/var/log/nix-gc.log";
+            StandardErrorPath = "/var/log/nix-gc.error.log";
+          };
+        };
+        # List packages installed in system profile. To search by name, run:
+        # $ nix-env -qaP | grep wget
 
-      # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
+        # Enable alternative shell support in nix-darwin.
+        # programs.fish.enable = true;
 
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+        # Set Git commit hash for darwin-version.
+        system.configurationRevision = self.rev or self.dirtyRev or null;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 6;
+        # Used for backwards compatibility, please read the changelog before changing.
+        # $ darwin-rebuild changelog
+        system.stateVersion = 6;
 
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+        # The platform the configuration will be used on.
+        nixpkgs.hostPlatform = "aarch64-darwin";
+      };
+    in
+    {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#Elephs-MacBook-Air
+      darwinConfigurations."Elephs-MacBook-Air" = nix-darwin.lib.darwinSystem {
+        modules = [
+          configuration
+          ./apps.nix
+          ./system.nix
+        ];
+      };
     };
-  in
-  {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#Elephs-MacBook-Air
-    darwinConfigurations."Elephs-MacBook-Air" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration
-      ./apps.nix
-      ./system.nix
-      ];
-    };
-  };
 }

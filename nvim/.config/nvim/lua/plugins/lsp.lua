@@ -9,6 +9,7 @@ return {
 			local ensure_installed = {
 				"lua-language-server",
 				"pyright",
+				"rnix-lsp",
 				-- Formatter
 				"isort",
 				"prettier",
