@@ -2,8 +2,10 @@
 #------------------------
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Variable
 #-----------
 export EDITOR="nvim"
+bindkey -e
 #------------------------
 
 # Prompt
@@ -43,14 +45,11 @@ function ra() {
 }
 #------------------------
 
-
 # Alias
 #------------------------
 alias sz="source $HOME/.zshrc"
 alias v="nvim"
 #------------------------
-
-
 
 # Initial for ui
 #------------------------
@@ -59,6 +58,13 @@ source <(fzf --zsh)
 source ~/dotfiles/zsh/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/dotfiles/zsh/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 eval "$(zoxide init zsh --cmd j)"
+#------------------------
+
+# Plugins settings
+#------------------------
+bindkey              '^I' menu-select
+bindkey "$terminfo[kcbt]" menu-select
+zstyle ':autocomplete:*' add-semicolon no
 #------------------------
 
 # Created by `pipx` on 2026-01-07 11:00:21

@@ -234,6 +234,32 @@
       ]
     },
     {
+      "description": "Ctrl_x -> Cmd_x --- Except Ghotty",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "x",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "x",
+              "modifiers": ["command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Ctrl_z -> Cmd_z",
       "manipulators": [
         {
