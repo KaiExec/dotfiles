@@ -5,7 +5,6 @@
     [
       pkgs.nix
       pkgs.neovim
-      pkgs.git
       pkgs.mas
       pkgs.bat
       pkgs.ffmpeg
@@ -22,7 +21,6 @@
       pkgs.zoxide
       pkgs.aerospace
       pkgs.telegram-desktop
-      pkgs.karabiner-elements
       pkgs.maccy
       pkgs.obsidian
       pkgs.raycast
@@ -42,15 +40,16 @@
       "nikitabobko/tap"
     ];
     brews = [
-      "mihomo"
       "mole"
       "rust"
     ];
     casks = [
       "mumuplayer"
       "squirrel-app"
-      "discord"
+      "ghostty"
+      "karabiner-elements"
       "crossover"
+      "cleanshot"
     ];
 
     masApps = {
