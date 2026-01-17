@@ -14,6 +14,7 @@ return {
 				"isort",
 				"prettier",
 				"stylua",
+				"alejandra",
 			}
 
 			local registry = require("mason-registry")

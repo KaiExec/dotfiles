@@ -26,6 +26,7 @@
       pkgs.raycast
       pkgs.wechat
       pkgs.feishin
+      pkgs.keka
       pkgs.maple-mono.NF
     ];
   homebrew = {
@@ -34,7 +35,7 @@
     onActivation = {
       autoUpdate = true;
       upgrade = true;
-      # cleanup = "zap";
+      cleanup = "zap";
     };
     taps = [
       "nikitabobko/tap"
@@ -42,6 +43,7 @@
     brews = [
       "mole"
       "rust"
+      "mihomo"
     ];
     casks = [
       "mumuplayer"
