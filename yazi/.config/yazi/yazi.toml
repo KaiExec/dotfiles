@@ -36,7 +36,7 @@ edit = [
 ]
 play = [
 	{ run = "xdg-open %s1",                desc = "Play", for = "linux" },
-	{ run = "vlc %s",                     desc = "Play", for = "macos" },
+	{ run = "mpv %s",                     desc = "Play", for = "macos" },
 	{ run = 'start "" %s1', orphan = true, desc = "Play", for = "windows" },
 	{ run = "termux-open %s1",             desc = "Play", for = "android" },
 	{ run = "mediainfo %s1; echo 'Press enter to exit'; read _", block = true, desc = "Show media info", for = "unix" },
@@ -64,6 +64,9 @@ download = [
 ]
 
 [open]
+prepend_rules = [
+    {url = "*.scss", use = "edit"}
+]
 rules = [
 	# Folder
 	{ url = "*/", use = [ "edit", "open", "reveal" ] },

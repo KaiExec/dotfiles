@@ -1,6 +1,5 @@
--- ~/.config/yazi/init.lua
 require("bookmarks"):setup({
-	last_directory = { enable = true, persist = false, mode="dir" },
+	last_directory = { enable = true, persist = false, mode = "dir" },
 	persist = "all",
 	desc_format = "parent",
 	file_pick_mode = "parent",
@@ -14,4 +13,8 @@ require("bookmarks"):setup({
 			delete_all = "Deleted all bookmarks",
 		},
 	},
+})
+
+require("zoxide"):setup({
+	update_db = true,
 })

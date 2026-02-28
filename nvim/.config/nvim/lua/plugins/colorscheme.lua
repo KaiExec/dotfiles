@@ -1,22 +1,26 @@
 return {
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		flavour = "mocha", -- latte, frappe, macchiato, mocha
+		"oskarnurm/koda.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
-			require("catppuccin").setup({
-				term_colors = true,
-				transparent_background = false,
-				color_overrides = {
-					all = {
-						base = "#000000",
-						mantle = "#000000",
-						crust = "#000000",
-					},
+			require("koda").setup({
+				auto = true,
+				transparent = true,
+				styles = {
+					functions = { bold = true, italic = true },
+					keywords = {},
+					comments = { italic = true },
+					strings = {},
+					constants = {}, -- includes numbers, booleans
 				},
+				on_highlights = function(hl, c)
+					hl.Todo = { fg = c.info, bold = true }
+					hl.Comment = { fg = "#033dfc", italic = true }
+					hl.DiagnosticUnnecessary = { fg = c.comment, italic = true }
+				end,
 			})
-			vim.cmd.colorscheme("catppuccin")
+			vim.cmd("colorscheme koda")
 		end,
 	},
 	{
@@ -28,5 +32,9 @@ return {
 			})
 		end,
 		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
+	{
+		"brenoprata10/nvim-highlight-colors",
+		opts = {},
 	},
 }

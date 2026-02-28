@@ -14,3 +14,9 @@ opt.expandtab = true -- Convert to space TvT
 -- opt.smarttab = true -- Distinguish tab and indentation
 
 opt.scrolloff = 7
+
+opt.list = true
+opt.listchars = {
+	space = "·",
+	tab = "» ",
+}

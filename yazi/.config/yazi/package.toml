@@ -8,5 +8,7 @@ use = "dedukun/bookmarks"
 rev = "fbb7c00"
 hash = "1d231a808d3344546380df33daf43e91"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "malick-tammal/monokai"
+rev = "e59f6cb"
+hash = "dcb449d46e30dc020e4b7b59202d2448"

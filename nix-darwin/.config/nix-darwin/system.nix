@@ -13,6 +13,6 @@
     };
   };
   system.activationScripts.postActivation.text = ''
-    sudo -u eleph /usr/bin/osascript -e 'tell application "System Events" to tell every desktop to set picture to "~/Pictures/wallpapers/09.png"'
+    sudo -u eleph /usr/bin/osascript -e 'tell application "System Events" to tell every desktop to set picture to "~/Pictures/wallpapers/13.jpg"'
   '';
 }

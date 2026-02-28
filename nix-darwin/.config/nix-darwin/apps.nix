@@ -19,7 +19,6 @@
       pkgs.tmux
       pkgs.yazi
       pkgs.zoxide
-      pkgs.aerospace
       pkgs.telegram-desktop
       pkgs.maccy
       pkgs.obsidian
@@ -44,14 +43,27 @@
       "mole"
       "rust"
       "mihomo"
+      "pnpm"
+      "mpv"
+      "yt-dlp"
+      "mas"
     ];
     casks = [
-      "mumuplayer"
       "squirrel-app"
       "ghostty"
       "karabiner-elements"
       "crossover"
       "cleanshot"
+      "tencent-meeting"
+      "krita"
+      "obs"
+      "element"
+      "blender"
+      "jordanbaird-ice"
+      "android-studio"
+      "aerospace"
+      "google-chrome"
+      "readest"
     ];
 
     masApps = {

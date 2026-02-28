@@ -11,3 +11,7 @@ Map({ "n", "v" }, "J", "5j")
 Map({ "n", "v" }, "K", "5k")
 Map({ "n", "v", "o" }, "H", "^")
 Map({ "n", "v", "o" }, "L", "$")
+Map({ "n", "v", "o" }, "<leader><CR>", "%")
+
+-- Movement
+Map("n", "c", '"_c')

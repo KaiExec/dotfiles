@@ -1,11 +1,29 @@
+local opt = vim.lsp
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lspConfig", { clear = true }),
 	callback = function(event)
-		local opt = vim.lsp
 		local client = opt.get_client_by_id(event.data.client_id)
-
+		local function diagnosticOn()
+			vim.diagnostic.config({
+				underline = true,
+				virtual_text = true,
+				signs = {
+					active = true,
+					text = {
+						[vim.diagnostic.severity.ERROR] = "󱎶",
+						[vim.diagnostic.severity.WARN] = "",
+						[vim.diagnostic.severity.HINT] = "󰊠",
+						[vim.diagnostic.severity.INFO] = "",
+					},
+				},
+				update_in_insert = true,
+			})
+		end
+		diagnosticOn()
 		-- Show Hover Information
-		Map("n", "M", opt.buf.hover, { buffer = event.buf, desc = "LSP: Show Hover Info" })
+		Map("n", "M", function()
+			opt.buf.hover({ border = "rounded" })
+		end, { buffer = event.buf, desc = "LSP: Show Hover Info" })
 
 		-- Jump to Definition
 		Map("n", "gd", opt.buf.definition, { buffer = event.buf, desc = "LSP: Goto Definition" })
@@ -15,45 +33,37 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		Map("n", "<leader>rn", opt.buf.rename, { buffer = event.buf, desc = "LSP: Rename" })
 
 		-- Diagnostics
-		Map(
-			"n",
-			"<leader>td",
-			(function()
-				local status = 1 -- 1 show, 0 hide
-				return function()
-					if status == 1 then
-						vim.diagnostic.config({
-							underline = true,
-							virtual_text = true,
-							signs = true,
-							update_in_insert = true,
-						})
-						status = 0
-					else
-						vim.diagnostic.config({
-							underline = false,
-							virtual_text = false,
-							signs = false,
-							update_in_insert = false,
-						})
-						status = 1
-					end
-				end
-			end)(),
-			{ buffer = event.buf, desc = "LSP: Goto Declaration" }
-		)
+		local isShown = true
+		Map("n", "<leader>td", function()
+			if isShown then
+				vim.diagnostic.config({
+					underline = false,
+					virtual_text = false,
+					signs = false,
+					update_in_insert = false,
+				})
+			else
+				diagnosticOn()
+			end
+			isShown = not isShown
+		end, { buffer = event.buf, desc = "LSP: Goto Declaration" })
+		Map("n", "<leader>ed", vim.diagnostic.open_float, { desc = "Floating Diagnostics" })
 
 		-- Inlay Hint
-		if client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-			vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
+		if client:supports_method(opt.protocol.Methods.textDocument_inlayHint) then
+			opt.inlay_hint.enable(true, { bufnr = event.buf })
 		end
 	end,
 })
 
 -- List
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("pyright")
-vim.lsp.enable("gopls")
-vim.lsp.enable("vtsls")
-vim.lsp.enable("fish_lsp")
-vim.lsp.enable("rnix")
+opt.enable("lua_ls")
+opt.enable("pyright")
+opt.enable("gopls")
+opt.enable("vtsls")
+opt.enable("fish_lsp")
+opt.enable("rnix")
+opt.enable("clangd")
+opt.enable("rust_analyzer")
+opt.enable("cssls")
+opt.enable("vue_ls")

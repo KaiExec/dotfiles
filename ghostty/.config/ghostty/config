@@ -4,8 +4,11 @@ font-family = "LXGW WenKai Mono TC"
 font-size = 20
 
 # ColorScheme
-theme = catppuccin Mocha
-background = #000000
+theme = Belafonte Night
+background-image = /Users/eleph/Library/Application Support/Steam/steamapps/common/Z.A.T.O.  I Love the World and Everything In It/Z.A.T.O. DIGITAL ART PACK/25.CG art 11.png
+
+background-image-fit = stretch
+background-image-opacity = 0.6
 
 # For Mac Option key
 macos-option-as-alt = right
