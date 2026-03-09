@@ -1,23 +1,27 @@
 # Initial for start
 #------------------------
 eval "$(/opt/homebrew/bin/brew shellenv)"
-# fpath+=("${HOMEBREW_PREFIX}/share/zsh/site-functions")
 
 # Variable
 #-----------
-export EDITOR="nvim"
-export https_proxy=http://127.0.0.1:6152
-export http_proxy=http://127.0.0.1:6152
-export all_proxy=socks5://127.0.0.1:6153
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$HOME/go/bin/
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-export SSH_AUTH_SOCK=$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
-bindkey -e
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_SILENT
+bindkey -e
+
+export EDITOR="nvim"
+
+export SSH_AUTH_SOCK=$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
+export https_proxy=http://127.0.0.1:6152
+export http_proxy=http://127.0.0.1:6152
+export all_proxy=socks5://127.0.0.1:6153
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH=$PATH:$HOME/go/bin/
+
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 #------------------------
 
 # Prompt
@@ -61,7 +65,6 @@ rm -f -- "$tmp"
 #------------------------
 alias sz="source $HOME/.zshrc"
 alias v="nvim"
-alias lab="ssh dev@lab.local"
 #------------------------
 
 # Initial for ui
@@ -83,9 +86,6 @@ eval "$(starship init zsh)"
 # zstyle ':autocomplete:*' add-semicolon no
 #------------------------
 
-# Created by `pipx` on 2026-01-07 11:00:21
-export PATH="$PATH:/Users/eleph/.local/bin"
-
 # pnpm
 export PNPM_HOME="/Users/eleph/Library/pnpm"
 case ":$PATH:" in
@@ -94,5 +94,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# uv
 . "$HOME/.local/bin/env"
-
+# uv end
