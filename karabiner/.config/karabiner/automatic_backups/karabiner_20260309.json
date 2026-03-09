@@ -11,8 +11,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Safari$",
-                                            "com.google.Chrome",
-                                            "org.mozilla.firefox"
+                                            "com.google.Chrome"
                                         ],
                                         "type": "frontmost_application_if"
                                     }

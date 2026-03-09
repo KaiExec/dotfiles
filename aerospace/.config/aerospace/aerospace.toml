@@ -7,10 +7,9 @@ config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = ['exec-and-forget sketchybar']
+after-startup-command = ['exec-and-forget sketchybar', 'workspace 💌']
 
 # Start AeroSpace at login
-# TODO after all setting works good!
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
@@ -54,17 +53,12 @@ automatically-unhide-macos-hidden-apps = false
 persistent-workspaces = ['💌',
                          '🕳️',
                          '🃏',
-                         '🫵',
                          '💬',
-                         '🪝',
-                         '📓',
                          '🗑️',
                          '📀',
                          '✍️',
                          '🎧',
                          '🎨']
-
-                       
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -119,7 +113,7 @@ on-mode-changed = []
     # You can uncomment the following lines to open up terminal with alt + enter shortcut
     # (like in i3)
     ctrl-cmd-o = 'exec-and-forget open -n -a "Ghostty"'
-    ctrl-cmd-b = 'exec-and-forget open -n -a "Google Chrome"'
+    ctrl-cmd-b = 'exec-and-forget open -n -a "Firefox"'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
@@ -152,18 +146,15 @@ on-mode-changed = []
     # alt-7 = 'workspace 7'
     # alt-8 = 'workspace 8'
     # alt-9 = 'workspace 9'
-    alt-t = 'workspace 💌' # Terminal
-    alt-b = 'workspace 🕳️' # Browser
-    alt-g = 'workspace 🃏' # Game
-    alt-a = 'workspace 🫵' # TODOList
-    alt-c = 'workspace 💬' # Chat
-    alt-r = 'workspace 🪝' # Reeder
-    alt-e = 'workspace 📓' # E-books
-    alt-i = 'workspace 🗑️' # Inbox
-    alt-m = 'workspace 📀' # VM
-    alt-n = 'workspace ✍️' # Note
-    alt-p = 'workspace 🎧' # Player
-    alt-d = 'workspace 🎨' # Draw
+    alt-1 = 'workspace 💌' # Terminal
+    alt-2 = 'workspace 🕳️' # Browser
+    alt-3 = 'workspace 🃏' # Game
+    alt-4 = 'workspace 📀' # VM
+    alt-5 = 'workspace 💬' # Chat
+    alt-0 = 'workspace ✍️' # Note
+    alt-9 = 'workspace 🗑️' # Inbox
+    alt-8 = 'workspace 🎨' # Draw
+    alt-7 = 'workspace 🎧' # Player
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     # alt-shift-1 = ['move-node-to-workspace 1','workspace 1' ]
@@ -175,18 +166,15 @@ on-mode-changed = []
     # alt-shift-7 = ['move-node-to-workspace 7','workspace 7' ]
     # alt-shift-8 = ['move-node-to-workspace 8','workspace 8' ]
     # alt-shift-9 = ['move-node-to-workspace 9','workspace 9' ]
-    alt-shift-t = ['move-node-to-workspace 💌','workspace 💌' ]
-    alt-shift-b = ['move-node-to-workspace 🕳️','workspace 🕳️' ]
-    alt-shift-g = ['move-node-to-workspace 🃏','workspace 🃏' ]
-    alt-shift-a = ['move-node-to-workspace 🫵','workspace 🫵' ]
-    alt-shift-c = ['move-node-to-workspace 💬','workspace 💬' ]
-    alt-shift-r = ['move-node-to-workspace 🪝','workspace 🪝' ]
-    alt-shift-e = ['move-node-to-workspace 📓','workspace 📓' ]
-    alt-shift-i = ['move-node-to-workspace 🗑️','workspace 🗑️' ]
-    alt-shift-m = ['move-node-to-workspace 📀','workspace 📀' ]
-    alt-shift-n = ['move-node-to-workspace ✍️','workspace ✍️' ]
-    alt-shift-p = ['move-node-to-workspace 🎧','workspace 🎧' ]
-    alt-shift-d = ['move-node-to-workspace 🎨','workspace 🎨' ]
+    alt-shift-1 = ['move-node-to-workspace 💌','workspace 💌' ]
+    alt-shift-2 = ['move-node-to-workspace 🕳️','workspace 🕳️' ]
+    alt-shift-3 = ['move-node-to-workspace 🃏','workspace 🃏' ]
+    alt-shift-4 = ['move-node-to-workspace 📀','workspace 📀' ]
+    alt-shift-5 = ['move-node-to-workspace 💬','workspace 💬' ]
+    alt-shift-0 = ['move-node-to-workspace ✍️','workspace ✍️' ]
+    alt-shift-9 = ['move-node-to-workspace 🗑️','workspace 🗑️' ]
+    alt-shift-8 = ['move-node-to-workspace 🎨','workspace 🎨' ]
+    alt-shift-7 = ['move-node-to-workspace 🎧','workspace 🎧' ]
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -222,7 +210,25 @@ on-mode-changed = []
     run = ['layout floating']
 
 [[on-window-detected]]
-    if.app-id = 'com.TickTick.task.mac'
-    run = ['move-node-to-workspace 🫵']
+    if.app-name-regex-substring = 'Dashboard'
+    run = ['layout floating']
 
+[[on-window-detected]]
+    if.app-id = 'com.bitwarden.desktop'
+    run = ['layout floating']
 
+[[on-window-detected]]
+    if.app-id = 'com.tencent.xinWeChat'
+    run = ['move-node-to-workspace 💬']
+
+[[on-window-detected]]
+    if.app-id = 'org.jeffvli.feishin'
+    run = ['move-node-to-workspace 🎧']
+
+[[on-window-detected]]
+    if.app-id = 'org.mozilla.firefox'
+    run = ['move-node-to-workspace 🕳️']
+
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = ['move-node-to-workspace 🕳️']

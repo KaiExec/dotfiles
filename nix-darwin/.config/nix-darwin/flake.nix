@@ -11,10 +11,10 @@
     let
       configuration = { pkgs, ... }: {
         nix.enable = false;
-        system.primaryUser = "eleph";
-        users.users."eleph" = {
-          name = "eleph";
-          home = "/Users/eleph";
+        system.primaryUser = "25air";
+        users.users."25air" = {
+          name = "25air";
+          home = "/Users/25air";
         };
         launchd.daemons."nix-gc" = {
           script = ''
@@ -46,7 +46,7 @@
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#Elephs-MacBook-Air
-      darwinConfigurations."Elephs-MacBook-Air" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."25airs-MacBook-Air" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
           ./apps.nix
