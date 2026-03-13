@@ -13,6 +13,7 @@ return {
 				"vtsls",
 				"css-lsp",
 				"clangd",
+				"rust-analyzer",
 				-- Formatter
 				"isort",
 				"prettier",

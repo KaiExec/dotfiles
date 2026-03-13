@@ -222,6 +222,10 @@ on-mode-changed = []
     run = ['move-node-to-workspace 💬']
 
 [[on-window-detected]]
+    if.app-id = 'ru.keepcoder.Telegram'
+    run = ['move-node-to-workspace 💬']
+
+[[on-window-detected]]
     if.app-id = 'org.jeffvli.feishin'
     run = ['move-node-to-workspace 🎧']
 
@@ -232,3 +236,12 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.google.Chrome'
     run = ['move-node-to-workspace 🕳️']
+
+[[on-window-detected]]
+    if.app-id = 'org.musicbrainz.Picard'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.app-id = 'md.obsidian'
+    run = ['move-node-to-workspace ✍️']
+

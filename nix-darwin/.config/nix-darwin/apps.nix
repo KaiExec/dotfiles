@@ -18,6 +18,7 @@
       pkgs.yazi
       pkgs.zoxide
       pkgs.feishin
+      pkgs.ripgrep
     ];
   homebrew = {
     enable = true;
@@ -32,12 +33,12 @@
     ];
     brews = [
       "mole"
-      "rust"
       "pnpm"
       "mpv"
       "yt-dlp"
       "mas"
       "golang"
+      "starship"
     ];
     casks = [
       "keka"
