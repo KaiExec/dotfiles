@@ -74,7 +74,7 @@ source <(fzf --zsh)
 # source ~/dotfiles/zsh/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 eval "$(zoxide init zsh --cmd j)"
 autoload -Uz compinit
-compinit
+compinit -C
 
 eval "$(starship init zsh)"
 #------------------------

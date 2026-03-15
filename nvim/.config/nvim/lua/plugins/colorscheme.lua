@@ -16,7 +16,7 @@ return {
 				},
 				on_highlights = function(hl, c)
 					hl.Todo = { fg = c.info, bold = true }
-					hl.Comment = { fg = "#033dfc", italic = true }
+					hl.Comment = { fg = "#C2FF69", italic = true }
 					hl.DiagnosticUnnecessary = { fg = c.comment, italic = true }
 				end,
 			})

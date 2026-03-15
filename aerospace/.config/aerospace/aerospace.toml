@@ -151,6 +151,7 @@ on-mode-changed = []
     alt-3 = 'workspace 🃏' # Game
     alt-4 = 'workspace 📀' # VM
     alt-5 = 'workspace 💬' # Chat
+
     alt-0 = 'workspace ✍️' # Note
     alt-9 = 'workspace 🗑️' # Inbox
     alt-8 = 'workspace 🎨' # Draw
@@ -171,6 +172,7 @@ on-mode-changed = []
     alt-shift-3 = ['move-node-to-workspace 🃏','workspace 🃏' ]
     alt-shift-4 = ['move-node-to-workspace 📀','workspace 📀' ]
     alt-shift-5 = ['move-node-to-workspace 💬','workspace 💬' ]
+
     alt-shift-0 = ['move-node-to-workspace ✍️','workspace ✍️' ]
     alt-shift-9 = ['move-node-to-workspace 🗑️','workspace 🗑️' ]
     alt-shift-8 = ['move-node-to-workspace 🎨','workspace 🎨' ]

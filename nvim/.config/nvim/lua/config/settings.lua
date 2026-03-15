@@ -5,6 +5,7 @@ vim.g.maplocalleader = "\\"
 opt.number = true
 opt.relativenumber = true
 opt.clipboard:append("unnamedplus")
+opt.termguicolors = true
 
 -- Tab and Indentation
 
@@ -16,7 +17,11 @@ opt.expandtab = true -- Convert to space TvT
 opt.scrolloff = 7
 
 opt.list = true
-opt.listchars = {
-	space = "·",
-	tab = "» ",
-}
+local space = "·"
+opt.listchars:append({
+	tab = "│─",
+	multispace = space,
+	lead = space,
+	trail = space,
+	nbsp = space,
+})
