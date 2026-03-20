@@ -50,7 +50,7 @@
         modules = [
           configuration
           ./apps.nix
-          ./system.nix
+          ./system/system.nix
         ];
       };
     };

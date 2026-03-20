@@ -39,6 +39,9 @@
       "mas"
       "golang"
       "starship"
+      "ktlint"
+      "kotlin"
+      "gradle"
     ];
     casks = [
       "keka"

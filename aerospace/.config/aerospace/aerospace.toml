@@ -58,7 +58,8 @@ persistent-workspaces = ['💌',
                          '📀',
                          '✍️',
                          '🎧',
-                         '🎨']
+                         '🎨',
+                         '📕']
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -156,6 +157,7 @@ on-mode-changed = []
     alt-9 = 'workspace 🗑️' # Inbox
     alt-8 = 'workspace 🎨' # Draw
     alt-7 = 'workspace 🎧' # Player
+    alt-6 = 'workspace 📕' # Player
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     # alt-shift-1 = ['move-node-to-workspace 1','workspace 1' ]
@@ -177,6 +179,7 @@ on-mode-changed = []
     alt-shift-9 = ['move-node-to-workspace 🗑️','workspace 🗑️' ]
     alt-shift-8 = ['move-node-to-workspace 🎨','workspace 🎨' ]
     alt-shift-7 = ['move-node-to-workspace 🎧','workspace 🎧' ]
+    alt-shift-6 = ['move-node-to-workspace 📕','workspace 📕' ]
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -247,3 +250,6 @@ on-mode-changed = []
     if.app-id = 'md.obsidian'
     run = ['move-node-to-workspace ✍️']
 
+[[on-window-detected]]
+    if.app-id = 'com.bilingify.readest'
+    run = ['move-node-to-workspace 📕']
