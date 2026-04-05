@@ -18,7 +18,6 @@
 𪻐 cong
 䐛 da
 蜑 dan
-氹 dang
 鮗 dong
 遯 dun
 犎 feng
@@ -30,11 +29,12 @@
 淈 gu
 鱥 gui
 脝 heng
-魟 hong
+𫚉 hong
 睺 hou
 泘 hu
 沕 hu
 㺀 hu
+𬴐 huan
 獚 huang
 𫚔 hui
 䇲 jia
@@ -46,12 +46,12 @@
 喼 jie
 椇 ju
 鵙 ju
-罥 juan
 濬 jun
 埈 jun
 峠 ka
 窾 kuan
 鞟 kuo
+筈 kuo
 鯻 la
 鿶 lang
 𧒽 lei
@@ -64,20 +64,17 @@
 𤝽 lv
 铓 mang
 𱇮 mang
-脢 mei
 濛 meng
 䕷 mi
 旼 min
 慜 min
 暋 min
-麿 mo
 拏 na
 鬅 peng
 魾 pi
 魮 pi
 𫚙 pu
 碁 qi
-箝 qian
 犭 quan
 荵 ren
 叡 rui
@@ -130,6 +127,7 @@
 𤭢 cei
 蟌 cong
 鿕 dan
+氹 dang
 㨃 dui
 欸 ei
 鳆 fu
@@ -137,11 +135,14 @@
 睆 huan
 檵 ji
 朘 juan
+罥 juan
 佧 ka
 堀 ku
 菈 la
 𫟷 li
+脢 mei
 蒾 mi
+麿 mo
 鿭 ni
 嬢 niang
 㖏 nie
@@ -585,7 +586,6 @@
 者竜乡
 獉狉
 杜凯琹
-褚小杯大
 悃愊无华
 嫏嬛
 勒掯
@@ -812,9 +812,10 @@
 夏无且
 属予作文以记之
 皋陶
-钟繇
 𦗒狐
 不亦说乎
 日掛中天
 鹤庆乾酒
 吴廷瑈
+刘畊宏
+楳图一雄

@@ -4,32 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Ctrl_z -> Cmd_z --- Except Ghotty",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.mitchellh\\.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "z",
-                                    "modifiers": { "mandatory": ["control"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Ctrl_q -> Cmd_l for quickly goto link bar",
                         "manipulators": [
                             {
@@ -84,6 +58,24 @@
                         ]
                     },
                     {
+                        "description": "Ctrl_z -> Cmd_z",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": { "mandatory": ["control"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "z",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Ctrl_t -> Cmd_t --- Except Ghostty",
                         "manipulators": [
                             {
@@ -111,7 +103,6 @@
                     },
                     {
                         "description": "Left ctrl + hjkl to arrow keys Vim",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {

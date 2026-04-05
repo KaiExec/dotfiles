@@ -260,7 +260,7 @@
       ]
     },
     {
-      "description": "Ctrl_z -> Cmd_z",
+      "description": "Ctrl_z -> Cmd_z --- Except Ghotty",
       "manipulators": [
         {
           "type": "basic",
@@ -274,6 +274,12 @@
             {
               "key_code": "z",
               "modifiers": ["command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
             }
           ]
         }

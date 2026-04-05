@@ -19,6 +19,7 @@
       pkgs.zoxide
       pkgs.feishin
       pkgs.ripgrep
+      pkgs.anki-bin
     ];
   homebrew = {
     enable = true;
@@ -42,6 +43,9 @@
       "ktlint"
       "kotlin"
       "gradle"
+      "jq"
+      "just"
+      "bookokrat"
     ];
     casks = [
       "keka"
@@ -51,15 +55,11 @@
       "karabiner-elements"
       "crossover"
       "cleanshot"
-      "tencent-meeting"
       "obs"
       "obsidian"
-      "element"
-      "blender"
       "jordanbaird-ice"
       "android-studio"
       "nikitabobko/tap/aerospace"
-      "google-chrome"
       "readest"
       "firefox"
       "font-maple-mono-nf-cn"
@@ -68,8 +68,6 @@
     masApps = {
       "Bitwarden" = 1352778147;
       "Parallels Desktop" = 1085114709;
-      "xCal" = 6745540489;
-      "Wechat" = 836500024;
       "Telegram" = 747648890;
     };
   };

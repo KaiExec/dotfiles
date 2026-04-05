@@ -4,6 +4,5 @@ rm ~/dotfiles/Rime/Library/Rime/weasel.yaml
 rm ~/dotfiles/Rime/Library/Rime/t9.schema.yaml
 rm ~/dotfiles/Rime/Library/Rime/symbols_caps_v.yaml
 rm ~/dotfiles/Rime/Library/Rime/en_dicts/cn_en_*.txt
-rm ~/dotfiles/Rime/Library/Rime/custom_phrase.txt
 rm -rf ~/dotfiles/Rime/Library/Rime/.git
 rm -rf ~/dotfiles/Rime/Library/Rime/.github

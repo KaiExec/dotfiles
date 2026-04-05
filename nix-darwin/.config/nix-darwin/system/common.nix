@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   system.defaults = {
     dock = {
@@ -5,7 +6,7 @@
       autohide-delay = 0.0;
       autohide-time-modifier = 0.0;
       show-recents = false;
-      persistent-apps = [
+      persistent-apps = lib.mkDefault [
         {
           app = "/Applications/Ghostty.app";
         }
@@ -30,7 +31,8 @@
       InitialKeyRepeat = 10;
     };
   };
-  system.activationScripts.postActivation.text = ''
+  system.activationScripts.postActivation.text = lib.mkDefault ''
     sudo -u 25air /usr/bin/osascript -e 'tell application "System Events" to tell every desktop to set picture to "~/Pictures/wallpapers/02.png"'
+    sudo pmset restoredefaults
   '';
 }

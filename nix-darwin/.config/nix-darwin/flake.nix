@@ -46,12 +46,38 @@
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#Elephs-MacBook-Air
-      darwinConfigurations."25airs-MacBook-Air" = nix-darwin.lib.darwinSystem {
-        modules = [
-          configuration
-          ./apps.nix
-          ./system.nix
-        ];
+      darwinConfigurations = {
+        "25airs-MacBook-Air" = nix-darwin.lib.darwinSystem {
+          modules = [
+            configuration
+            ./apps.nix
+            ./system/common.nix
+          ];
+        };
+        "read" = nix-darwin.lib.darwinSystem {
+          modules = [
+            configuration
+            ./apps.nix
+            ./system/common.nix
+            ./system/read.nix
+          ];
+        };
+        "code" = nix-darwin.lib.darwinSystem {
+          modules = [
+            configuration
+            ./apps.nix
+            ./system/common.nix
+            ./system/code.nix
+          ];
+        };
+        "private" = nix-darwin.lib.darwinSystem {
+          modules = [
+            configuration
+            ./apps.nix
+            ./system/common.nix
+            ./system/private.nix
+          ];
+        };
       };
     };
 }
