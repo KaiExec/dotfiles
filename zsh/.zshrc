@@ -65,6 +65,9 @@ rm -f -- "$tmp"
 #------------------------
 alias sz="source $HOME/.zshrc"
 alias v="nvim"
+alias li="eza --color=always --icons=always"
+alias ll="eza --color=always --icons=always -l"
+alias lt="eza --color=always --icons=always -T"
 #------------------------
 
 # Initial for ui

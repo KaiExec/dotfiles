@@ -1,26 +1,13 @@
 return {
 	{
-		"oskarnurm/koda.nvim",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
+		"sainnhe/gruvbox-material",
+		lazy = false,
+		priority = 1000,
 		config = function()
-			require("koda").setup({
-				auto = true,
-				transparent = true,
-				styles = {
-					functions = { bold = true, italic = true },
-					keywords = {},
-					comments = { italic = true },
-					strings = {},
-					constants = {}, -- includes numbers, booleans
-				},
-				on_highlights = function(hl, c)
-					hl.Todo = { fg = c.info, bold = true }
-					hl.Comment = { fg = "#C2FF69", italic = true }
-					hl.DiagnosticUnnecessary = { fg = c.comment, italic = true }
-				end,
-			})
-			vim.cmd("colorscheme koda")
+			-- Optionally configure and load the colorscheme
+			-- directly inside the plugin declaration.
+			vim.g.gruvbox_material_enable_italic = true
+			vim.cmd.colorscheme("gruvbox-material")
 		end,
 	},
 	{

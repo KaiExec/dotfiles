@@ -46,6 +46,7 @@
       "jq"
       "just"
       "bookokrat"
+      "eza"
     ];
     casks = [
       "keka"

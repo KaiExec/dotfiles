@@ -6,6 +6,6 @@
     };
   };
   system.activationScripts.postActivation.text = ''
-    sudo -u 25air /usr/bin/osascript -e 'tell application "System Events" to tell every desktop to set picture to "~/Pictures/wallpapers/06.png"'
+    sudo -u 25air /usr/bin/osascript -e 'tell application "System Events" to tell every desktop to set picture to "~/Pictures/wallpapers/01.png"'
   '';
 }
