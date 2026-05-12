@@ -5,6 +5,7 @@
     [
       pkgs.nix
       pkgs.neovim
+      pkgs.pnpm
       pkgs.bat
       pkgs.ffmpeg
       pkgs.fzf
@@ -20,13 +21,14 @@
       pkgs.feishin
       pkgs.ripgrep
       pkgs.anki-bin
+      pkgs.blueutil
     ];
   homebrew = {
     enable = true;
 
     onActivation = {
-      autoUpdate = true;
-      upgrade = true;
+      autoUpdate = false;
+      upgrade = false;
       cleanup = "zap";
     };
     taps = [
@@ -34,7 +36,6 @@
     ];
     brews = [
       "mole"
-      "pnpm"
       "mpv"
       "yt-dlp"
       "mas"
@@ -43,6 +44,8 @@
       "ktlint"
       "kotlin"
       "gradle"
+      "rclone"
+      "spicetify-cli"
       "jq"
       "just"
       "bookokrat"
@@ -54,22 +57,21 @@
       "squirrel-app"
       "ghostty"
       "karabiner-elements"
+      "macfuse"
       "crossover"
       "cleanshot"
       "obs"
+      "spotify"
       "obsidian"
       "jordanbaird-ice"
       "android-studio"
       "nikitabobko/tap/aerospace"
+      "tencent-meeting"
       "readest"
       "firefox"
-      "font-maple-mono-nf-cn"
+      "font-maple-mono"
     ];
 
-    masApps = {
-      "Bitwarden" = 1352778147;
-      "Parallels Desktop" = 1085114709;
-      "Telegram" = 747648890;
-    };
+    masApps = { };
   };
 }

@@ -3,16 +3,53 @@ font-family = "Maple Mono"
 font-family = "Kai"
 font-size = 20
 
-# ColorScheme
+# ColorScheme — deep teal-black undercurrent, rose & cyan from wallpaper
 bold-is-bright = true
-theme = Gruvbox Material Dark
+background = #0b1618
+foreground = #c4d4d6
+cursor-color = #3dbdbd
+cursor-text = #0b1618
+selection-background = #1a3030
+selection-foreground = #c4d4d6
+
+# Normal colors (0-7)
+palette = 0=#0b1618
+palette = 1=#bf7878
+palette = 2=#4aaf98
+palette = 3=#c8a878
+palette = 4=#4880b0
+palette = 5=#b07898
+palette = 6=#3dbdbd
+palette = 7=#94b4b4
+
+# Bright colors (8-15)
+palette = 8=#1c3035
+palette = 9=#e08888
+palette = 10=#58c8b0
+palette = 11=#e0c090
+palette = 12=#5898cc
+palette = 13=#c888b0
+palette = 14=#50d0d0
+palette = 15=#c4d8d8
+
+background-opacity = 0.1
+background-blur = macos-glass-regular
 
 # For Mac Option key
 macos-option-as-alt = right
-keybind = opt+left=text:\x1b[1;3D
-keybind = opt+right=text:\x1b[1;3C
-keybind = opt+up=text:\x1b[1;3A
-keybind = opt+down=text:\x1b[1;3B
 
-macos-titlebar-style = hidden
-window-save-state = always
+macos-titlebar-style = tabs
+window-save-state = never
+shell-integration-features = sudo
+
+# cmd+number: override Ghostty tab-switch, send ESC+digit to tmux instead
+keybind = super+digit_1=text:\x1b1
+keybind = super+digit_2=text:\x1b2
+keybind = super+digit_3=text:\x1b3
+keybind = super+digit_4=text:\x1b4
+keybind = super+digit_5=text:\x1b5
+keybind = super+digit_6=text:\x1b6
+keybind = super+digit_7=text:\x1b7
+keybind = super+digit_8=text:\x1b8
+keybind = super+digit_9=text:\x1b9
+

@@ -44,8 +44,12 @@
       };
     in
     {
-      # Build darwin flake using:
+        # Build darwin flake using:
       # $ darwin-rebuild build --flake .#Elephs-MacBook-Air
+      #
+      # Power saving mode (for portable study use):
+      #   darwin-rebuild switch --flake .#power-save
+      #   darwin-rebuild switch --flake .#25airs-MacBook-Air  # back to normal
       darwinConfigurations = {
         "25airs-MacBook-Air" = nix-darwin.lib.darwinSystem {
           modules = [
@@ -76,6 +80,13 @@
             ./apps.nix
             ./system/common.nix
             ./system/private.nix
+          ];
+        };
+        "power-save" = nix-darwin.lib.darwinSystem {
+          modules = [
+            configuration
+            ./apps.nix
+            ./system/power-save.nix
           ];
         };
       };

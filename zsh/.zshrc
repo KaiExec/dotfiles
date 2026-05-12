@@ -18,8 +18,8 @@ export all_proxy=socks5://127.0.0.1:6153
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-
 export PATH=$PATH:$HOME/go/bin/
+# export PATH =$PATH:$HOME/.local/bin
 
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 #------------------------
@@ -90,7 +90,7 @@ eval "$(starship init zsh)"
 #------------------------
 
 # pnpm
-export PNPM_HOME="/Users/eleph/Library/pnpm"
+export PNPM_HOME="/Users/25air/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

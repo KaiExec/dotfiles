@@ -41,6 +41,23 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 #     'sketchybar --trigger aerospace_workspace_change'
 # ]
 
+# # Spotify mini player
+# exec-on-workspace-change = [
+#   '/bin/bash', '-c',
+#   '''
+#   WIN_ID=$(aerospace list-windows --all \
+#     --format "%{window-id} %{app-name} %{window-title}" \
+#     | grep -E "^[0-9]+ Spotify .* - Person [0-9]+$" \
+#     | awk '{print $1}')
+#
+#   if [ -n "$WIN_ID" ]; then
+#     aerospace move-node-to-workspace \
+#       --window-id "$WIN_ID" \
+#       "$AEROSPACE_FOCUSED_WORKSPACE"
+#   fi
+#   '''
+# ]
+
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
@@ -55,7 +72,7 @@ persistent-workspaces = ['💌',
                          '🃏',
                          '💬',
                          '🗑️',
-                         '📀',
+                         '❔',
                          '✍️',
                          '🎧',
                          '🎨',
@@ -121,10 +138,14 @@ on-mode-changed = []
     alt-comma = 'layout accordion horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-    alt-h = 'focus left'
-    alt-j = 'focus down'
-    alt-k = 'focus up'
-    alt-l = 'focus right'
+    # alt-h = 'focus left'
+    # alt-j = 'focus down'
+    # alt-k = 'focus up'
+    # alt-l = 'focus right'
+    alt-h = 'focus --ignore-floating left'
+    alt-j = 'focus --ignore-floating down'
+    alt-k = 'focus --ignore-floating up'
+    alt-l = 'focus --ignore-floating right'
     # alt-shift-f = 'fullscreen'
     alt-shift-f = 'macos-native-fullscreen'
 
@@ -150,8 +171,8 @@ on-mode-changed = []
     # alt-9 = 'workspace 9'
     alt-1 = 'workspace 💌' # Terminal
     alt-2 = 'workspace 🕳️' # Browser
-    alt-3 = 'workspace 🃏' # Game
-    alt-4 = 'workspace 📀' # VM
+    alt-3 = 'workspace ❔' # AI
+    alt-4 = 'workspace 🃏' # Game
     alt-5 = 'workspace 💬' # Chat
 
     alt-0 = 'workspace ✍️' # Note
@@ -172,8 +193,8 @@ on-mode-changed = []
     # alt-shift-9 = ['move-node-to-workspace 9','workspace 9' ]
     alt-shift-1 = ['move-node-to-workspace 💌','workspace 💌' ]
     alt-shift-2 = ['move-node-to-workspace 🕳️','workspace 🕳️' ]
-    alt-shift-3 = ['move-node-to-workspace 🃏','workspace 🃏' ]
-    alt-shift-4 = ['move-node-to-workspace 📀','workspace 📀' ]
+    alt-shift-3 = ['move-node-to-workspace ❔','workspace ❔' ]
+    alt-shift-4 = ['move-node-to-workspace 🃏','workspace 🃏' ]
     alt-shift-5 = ['move-node-to-workspace 💬','workspace 💬' ]
 
     alt-shift-0 = ['move-node-to-workspace ✍️','workspace ✍️' ]
@@ -256,3 +277,25 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.bilingify.readest'
     run = ['move-node-to-workspace 📕']
+
+[[on-window-detected]]
+    if.app-id = 'com.TickTick.task.mac'
+    run = ['move-node-to-workspace 🗑️']
+
+[[on-window-detected]]
+    if.app-id = 'com.anthropic.claudefordesktop'
+    run = ['move-node-to-workspace ❔']
+
+[[on-window-detected]]
+    if.app-id = "com.spotify.client"
+    if.window-title-regex-substring = " - Person \\d+$"
+    run = ["layout floating", "layout sticky"]
+
+[[on-window-detected]]
+    if.app-id = 'com.spotify.client'
+    if.window-title-regex-substring = "^(?!.*- Person \\d+$).*$"
+    run = ['move-node-to-workspace 🎧']
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'mpv'
+    run = 'layout floating'
